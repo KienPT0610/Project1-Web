@@ -142,6 +142,9 @@ function ProductOutstanding() {
                         <h3 className="w-full line-clamp-2 text-[16px]">
                           {item.name}
                         </h3>
+                        <h3 className="w-full line-clamp-2 text-[16px]">
+                          {item.description}
+                        </h3>
                         {item.off === 0 && (
                           <div>
                             <span className="font-bold text-blue-500">

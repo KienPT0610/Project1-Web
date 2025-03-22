@@ -1,7 +1,7 @@
 import { TProductData } from "@/types/product.types";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const baseURL = "https://fakestoreapi.in/api/products";
+const baseURL = "https://dummyjson.com/products/category/smartphones";
 
 const fetchAPI = async (params: string): Promise<TProductData[]> => {
   const res = await fetch(`${baseURL}${params}`);
@@ -16,15 +16,15 @@ const fetchAPI = async (params: string): Promise<TProductData[]> => {
     id: product.id,
     name: product.title,
     price: product.price,
-    image: product.image,
+    image: product.images[0],
     description: product.description,
-    onSale: product.onSale || false,
+    sale: (product.discountPercentage > 0) ? true : false,
+    off: product.discountPercentage || 0,
     star: 4,
     brand: product.brand || "Unknown",
     model: product.model || "Unknown",
     color: product.color || "Unknown",
     category: product.category || "Unknown",
-    off: product.discount || 0,
     comments: 99,
   }));
 };

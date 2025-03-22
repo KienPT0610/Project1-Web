@@ -12,9 +12,10 @@ const colorOptions = [
 
 const brandOptions = [
   { label: "Sony", value: "sony" },
-  { label: "Samsung", value: "samsung" },
-  { label: "Apple", value: "apple" },
-  { label: "Xiaomi", value: "xiaomi" },
+  { label: "Samsung", value: "Samsung" },
+  { label: "Apple", value: "Apple" },
+  { label: "Xiaomi", value: "Xiaomi" },
+  { label: "Oppo", value: "Oppo" },
 ];
 
 const categoryOptions = [
