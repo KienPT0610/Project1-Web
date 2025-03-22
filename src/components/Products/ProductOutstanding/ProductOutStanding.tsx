@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
 import { fetchProducts } from "@/services/product.service";
 import { CircularProgress } from "@nextui-org/progress";
 import { FAILED, LOADING } from "@/types/status.enum";
+import tozot6 from "@/assets/images/tozot6.png";
 
 const items: TabsProps["items"] = [
   {
@@ -103,6 +104,7 @@ function ProductOutstanding() {
                       <div className="relative group flex justify-center flex-col">
                         <Image
                           src={item.image}
+                          onError={(e) => (e.currentTarget.src = tozot6.src)}
                           width={150}
                           height={130}
                           alt="img"

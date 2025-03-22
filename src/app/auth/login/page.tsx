@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Form, Input, Button, Typography, Flex, Divider } from "antd";
+import { Form, Input, Button, Typography, Flex, Divider, Image } from "antd";
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
 import { login } from "@/store/slices/authSlices";
@@ -15,6 +15,7 @@ import {
   AlipayCircleOutlined,
   WeiboCircleOutlined,
 } from "@ant-design/icons";
+import bgSideLogo from "@/assets/images/bgSideLogo.png";
 import { getAuthToken } from "@/hooks/useAuthGuard";
 
 const { Title } = Typography;
@@ -45,23 +46,13 @@ export default function Login() {
     <div
       id="Login"
       style={{
+        backgroundColor: "white",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         flex: "1",
       }}
     >
-      <div
-        style={{
-          backgroundColor: "#373e54",
-          borderRadius: "0",
-          margin: "0",
-          padding: "0",
-          width: "50%",
-          display: "block",
-          height: "100vh",
-        }}
-      ></div>
       <div
         style={{
           borderRadius: "0",
@@ -80,7 +71,7 @@ export default function Login() {
             padding: "20px",
             background: "white",
             borderRadius: "8px",
-            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+            boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
           }}
         >
           <Title
@@ -228,6 +219,16 @@ export default function Login() {
             </div>
           )}
         </Form>
+      </div>
+      <div className="w-1/2 h-screen bg-slate-800 flex items-center justify-center flex-col space-y-4">
+        <Image
+          src={bgSideLogo.src}
+          width={400}
+          alt="Background Side Logo"
+          preview={false}
+        />
+        <span className="text-2xl">Welcome to the system</span>
+        <span className="text-xl">Package manager system</span>
       </div>
     </div>
   );
