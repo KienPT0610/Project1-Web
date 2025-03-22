@@ -1,5 +1,6 @@
 import { TProductData } from "@/types/product.types";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import tozot6 from "@/assets/images/tozot6.png";
 
 const baseURL = "https://fakestoreapi.in/api/products";
 
@@ -16,7 +17,10 @@ const fetchAPI = async (params: string): Promise<TProductData[]> => {
     id: product.id,
     name: product.title,
     price: product.price,
-    image: product.image,
+    image:
+      product.image && product.image.startsWith("http")
+        ? product.image
+        : tozot6.src,
     description: product.description,
     onSale: product.onSale || false,
     star: 4,
