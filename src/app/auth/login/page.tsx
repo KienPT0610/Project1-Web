@@ -22,7 +22,7 @@ const { Title } = Typography;
 
 export default function Login() {
   const router = useRouter();
-  const token = getAuthToken();
+  const [token, setToken] = useState<string | null>(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useAppDispatch();
@@ -35,6 +35,10 @@ export default function Login() {
   const resetError = () => {
     dispatch(resetAuthError());
   };
+
+  useEffect(() => {
+    setToken(getAuthToken()); // Chỉ gọi trên client
+  }, []);
 
   useEffect(() => {
     if (token) {
