@@ -1,0 +1,45 @@
+.shop-category {
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .button-theme {
+    background-color: rgb(178 34 38);
+    width: 95%;
+    padding: 24px;
+    position: absolute;
+    left: 14px;
+    bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.spinner-1 {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: s1 1s infinite;
+  margin: auto;
+}
+@keyframes s1 {to{transform: rotate(.5turn)}}
