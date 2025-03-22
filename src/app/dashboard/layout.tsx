@@ -11,7 +11,7 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  useAuthGuard();
+  // useAuthGuard();
   return (
     <div className="flex flex-col min-h-[100vh]">
       <Header />

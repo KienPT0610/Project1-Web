@@ -11,7 +11,7 @@ function getAuthToken() {
   return tokenCookie ? tokenCookie.split("=")[1] : null;
 }
 
-export { getAuthToken };
+export { getAuthToken }; //
 
 export default function useAuthGuard() {
   const [isClient, setIsClient] = useState(false);
