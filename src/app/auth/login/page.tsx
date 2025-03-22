@@ -16,17 +16,17 @@ import {
   WeiboCircleOutlined,
 } from "@ant-design/icons";
 import bgSideLogo from "@/assets/images/bgSideLogo.png";
-import { getAuthToken } from "@/hooks/useAuthGuard";
 
 const { Title } = Typography;
 
 export default function Login() {
   const router = useRouter();
-  const [token, setToken] = useState<string | null>(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useAppDispatch();
-  const { isLoading, error } = useAppSelector((state: RootState) => state.auth);
+  const { isLoading, error, user } = useAppSelector(
+    (state: RootState) => state.auth
+  );
 
   const handleLogin = (values: { email: string; password: string }) => {
     dispatch(login(values.email, values.password));
@@ -37,14 +37,10 @@ export default function Login() {
   };
 
   useEffect(() => {
-    setToken(getAuthToken()); // Chỉ gọi trên client
-  }, []);
-
-  useEffect(() => {
-    if (token) {
+    if (user) {
       router.push("/dashboard");
     }
-  }, [token, router]);
+  }, [user, router]);
 
   return (
     <div
